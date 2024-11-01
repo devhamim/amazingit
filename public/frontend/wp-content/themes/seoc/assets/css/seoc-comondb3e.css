@@ -1,0 +1,377 @@
+/*
+Theme Name: seoc – seo & digital marketing agency WordPress theme
+Theme URI: https://wp.fleexstudio.com/seoc
+Author: Sujon Mahamud
+Author URI: 
+Description: seoc – seo & digital marketing agency WordPress theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: seoc
+*/
+
+/* CSS Index
+-----------------------------------
+1. Comon CSS
+2. Theme Button CSS
+3. Socials CSS
+*/
+
+
+/*=============== 
+Comon CSS
+================*/
+
+
+
+
+.bg-center-center{
+  background-position: center center;
+  background-size: cover;
+}
+
+h3.bouble-color-heading {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 52px;
+}
+
+span.middle_heading.gradient-text {
+  background: -webkit-linear-gradient(left, #4E2FDA, #8F00FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.box-effect-1{
+  transition: all .3s;
+  transform:translateY(0)
+}
+.box-effect-1:hover{
+  transition: all .3s;
+  transform:translateY(-5px)
+}
+
+
+/*=============== 
+Theme Button CSS
+================*/
+
+.theme-btn{
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.theme-btn-1 {
+  border-radius: 230px;
+  background: var(--Email-Marketing-Color-Main-Color, #4E2FDA);
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; 
+  padding: 17px 24px;
+  transform: translateY(0);
+  transition: all .3s;
+  
+}
+
+.theme-btn-1:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #2e00ff;
+  left: 0;
+  top: 0;
+  border-radius: 230px;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+}
+
+
+.theme-btn-1 span.btn-title {
+  position: relative;
+  z-index: 3;
+}
+
+
+.theme-btn-1:hover:before {
+  visibility: visible;
+  opacity: 1;
+  transition: all .3s;
+
+}
+
+.theme-btn-1:hover{
+  color: #fff;
+  transform: translateY(-5px);
+  transition: all .3s;
+}
+
+
+.theme-btn-2 {
+  border-radius: 4px;
+  background: linear-gradient(to right top, #623BF3, #8F00FF);
+  color: #654949;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; 
+  padding: 18px 24px;
+}
+
+
+
+.theme-btn-2:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #031220;
+  left: 0;
+  top: 0;
+  border-radius: 4px;
+  transform: scaleX(0);
+  transform-origin: top right;
+  transition: transform .5s cubic-bezier(.86,0,.07,1);
+  transition-timing-function: cubic-bezier(.86,0,.07,1);
+  z-index: -1;
+}
+
+
+.theme-btn-2:hover:before {
+  transform: scale(1);
+  transform-origin: bottom left;
+}
+.theme-btn-2:hover{
+  color: #fff;
+}
+
+
+a.cta-btn1 {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 230px;
+  background: var(--vl-theme-5);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; 
+  padding: 8px 8px 8px 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(0);
+  transition: all .3s;
+}
+a.cta-btn1:hover{
+  background: #2e00ff;
+  transform: translateY(-5px);
+  transition: all .3s;
+}
+a.cta-btn1:hover span.button-icon{
+  transition: all .3s;
+  transform: rotate(45deg);
+  background: #fff;
+
+}
+
+a.cta-btn1:hover span.button-icon svg path{
+  stroke: #2e00ff;
+}
+
+.cta-btn1 .btn-title{
+  color: var(--vl-theme-1);
+}
+.cta-btn1:hover:before {
+  transform: scale(1);
+  transform-origin: bottom left;
+}
+
+.cta-btn1:hover .btn-title{
+  color: var(--vl-theme-5);
+}
+
+.cta-btn1 .button-icon {
+  background: var(--vl-theme-1);
+  width: 36px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  margin-left: 8px;
+}
+
+
+.theme-btn-3 {
+  border-radius: 4px;
+  background: #FF6A6A;
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; 
+  padding: 18px 24px;
+}
+
+
+
+.theme-btn-3:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #031220;
+  left: 0;
+  top: 0;
+  border-radius: 4px;
+  transform: scaleX(0);
+  transform-origin: top right;
+  transition: transform .5s cubic-bezier(.86,0,.07,1);
+  transition-timing-function: cubic-bezier(.86,0,.07,1);
+  z-index: -1;
+}
+
+
+.theme-btn-3:hover:before {
+  transform: scale(1);
+  transform-origin: bottom left;
+}
+.theme-btn-3:hover{
+  color: #fff;
+}
+
+
+.theme-btn-4 {
+  border-radius: 30px;
+  background: #060512;
+  color: #FFF;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px; 
+  padding: 18px 24px;
+}
+
+
+
+.theme-btn-4:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #4C5EEC;
+  left: 0;
+  top: 0;
+  border-radius: 30px;
+  transform: scaleX(0);
+  transform-origin: top right;
+  transition: transform .5s cubic-bezier(.86,0,.07,1);
+  transition-timing-function: cubic-bezier(.86,0,.07,1);
+  z-index: -1;
+}
+
+
+.theme-btn-4:hover:before {
+  transform: scale(1);
+  transform-origin: bottom left;
+}
+.theme-btn-4:hover{
+  color: #fff;
+}
+
+
+
+/*=============== 
+Socials CSS
+================*/
+
+
+ul.theme_social li {
+  display: inline-block;
+  list-style: none;
+}
+
+ul.theme_social li a {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #ddd;
+  display: block;
+  border-radius: 50%;
+  color: #17133D;
+  font-size: 18px;
+  background: #fff;
+  transition: all .3s;
+}
+
+ul.theme_social li {
+  margin-right: 6px;
+}
+.footer-3 ul.theme_social li{
+  margin-right: 0;
+}
+ul.theme_social li:last-child {
+  margin-right: 0;
+}
+
+ul.theme_social li a:hover {
+  background: #17133D;
+  color: #fff;
+  transition: all .3s;
+}
+
+ul.theme_social.theme_social_1 li a {
+  background: #ECE9FE;
+  border-color: #ECE9FE;
+}
+
+ul.theme_social.theme_social_1 li a:hover {
+  background: #6A5CFF;
+  border-color: #6A5CFF;
+
+}
+
+ul.theme_social.theme_social_4 li a {
+  background: #EDEEFD;
+  border-color: #EDEEFD;
+}
+
+ul.theme_social.theme_social_4 li a:hover {
+  background: #6A5CFF;
+  border-color: #6A5CFF;
+}
+
+.footer__area .footer__widget ul.theme_social li a:hover{
+  padding-left: 0;
+}
+.footer__area .footer__widget ul.theme_social li a:before{
+  display: none;
+}
+
+
+.footer-3 ul.theme_social_3 li a:hover {
+  background: #FF6A6A;
+  border-color: #FF6A6A;
+}
+
+.vl_btn_full {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+a.header-btn13.vl_btn_full {
+  justify-content: center;
+}
