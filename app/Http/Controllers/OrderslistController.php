@@ -537,7 +537,8 @@ www.amaizingit.com';
     $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
     $response = Http::get($smsqUrl);
-
+    echo $response;
+    die();
 }
 
 // due payment
