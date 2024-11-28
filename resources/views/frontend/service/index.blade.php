@@ -4,139 +4,105 @@
 @section('meta_title', $metaSettings->meta_title ?? 'Nugortech IT - Services' )
 @section('meta_tag', $metaSettings->meta_tag ?? ' Services' )
 @section('content')
-<section class="page-title" style="background-image: url({{ asset('frontend') }}/images/background/page-title-bg.webp);">
-    <div class="auto-container">
-        <div class="title-outer text-center">
-            <h1 class="title">Our Services</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="{{ url('/') }}">Home</a></li>
-                <li>Services</li>
-            </ul>
-        </div>
-    </div>
-</section>
 
-<section class="service-section-two">
-    <div class="sec-title text-center">
-        <h2 class="text-white">WE SHAPE YOUR IDEAS.</h2>
-        <h6 class="text-white">In Nugortech It, we serve more than a digital marketing company. Our marketing mix <br> helps you to separate your voice from hauling competitors.</h6>
-    </div>
-    <div class="auto-container">
+<!--===== HERO AREA STARTS =======-->
+<div class="about-header-area" style="background-image: url({{ asset('frontend') }}/img/bg/inner-header.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <img src="{{ asset('frontend') }}/img/elements/elements1.png" alt="" class="elements1 aniamtion-key-1">
+    <img src="{{ asset('frontend') }}/img/elements/star2.png" alt="" class="star2 keyframe5">
+    <div class="container">
         <div class="row">
-            @foreach ($services as $service)
-                <div class="service-block-two col-xl-3 col-lg-4 col-md-6">
-                    <div class="inner-box">
-                        <div class="icon-box">
-                            <img style="height: 100%" src="{{asset('uploads/category')}}/{{$service->category_image}}" alt="{{$service->category_image}}">
-                        </div>
-                        <div class="content-box">
-                            <h3 class="title"><a href="{{ route('services.product', $service->slug) }}">{{$service->category_name}}</a></h3>
-                            <div class="text">{{$service->category_desp}}</div>
-                            <a href="{{ route('services.product', $service->slug) }}" data-animation-in="fadeInUp" data-delay-in="0.4" class="theme-btn ser-btn">Learn more
-                                <i class="flaticon-arrow-pointing-to-right btn-icon ms-1"></i>
-                            </a>
-                        </div>
-                    </div>
+            <div class="col-lg-5 m-auto">
+                <div class="about-inner-header heading9 text-center">
+                    <h1>Our Best Services</h1>
+                    <a href="{{ url('/') }}">Home <i class="fa-solid fa-angle-right"></i> <span>Services</span></a>
                 </div>
-            @endforeach
+            </div>
         </div>
     </div>
-</section>
+</div>
+<!--===== HERO AREA ENDS =======-->
 
-<section class="featured-products">
-    <div class="auto-container">
-
-        <div class="mixitup-gallery">
-            <div class="filters clearfix">
-                <ul class="filter-tabs filter-btns clearfix">
-                    <li class="active filter" data-role="button" data-filter=".TECHNOLOGY">LATEST TECHNOLOGY</li>
-                    <li class="filter" data-role="button" data-filter=".SUPPORT">AWESOME SUPPORT</li>
-                    <li class="filter" data-role="button" data-filter=".FUNCTIONAL">CROSS-FUNCTIONAL TEAM</li>
-                </ul>
+<!--===== SERVICE AREA STARTS =======-->
+<div class="service1-section-area sp2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="service-all-boxes-area1">
+                    <div class="row">
+                        @foreach ($services as $service)
+                            <div class="col-lg-3 col-md-6">
+                                <div class="service-boxarea">
+                                    <a href="#">{{$service->category_name}}</a>
+                                    <div class="space40"></div>
+                                    <img src="{{asset('uploads/category')}}/{{$service->category_image}}" alt="">
+                                    <div class="space40"></div>
+                                    <p>{{$service->category_desp}}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
             </div>
-            <div class="filter-list row">
-                <div class="product-block mix TECHNOLOGY col-lg-4 col-md-4 col-sm-12 hidden">
-                    <div class="inner-box">
+        </div>
+    </div>
+</div>
+<!--===== SERVICE AREA ENDS =======-->
+
+<!--===== WORK AREA STARTS =======-->
+<div class="works-inner-section-area sp1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="works-header-area heading2">
+                    <h5>Why Choose Us</h5>
+                    <h2>Experience the Advantage Why We're the Right Choice</h2>
+                    <p>Choose us for unmatched expertise, personalized solutions, and a proven track record of success. We’re dedicated to delivering results that drive your business forward.</p>
+                    <div class="space32"></div>
+                    <div class="works-content-box">
+                        <div class="icons">
+                            <img src="{{ asset('frontend') }}/img/icons/works-icons7.svg" alt="">
+                        </div>
                         <div class="content">
-                            <div class="image-box">
-                                <figure class="image overlay-anim"><img
-                                        src="{{ asset('frontend/images/s-3.webp') }}" alt="s-3">
-                                </figure>
-                            </div>
+                            <a href="#">Proven Result</a>
+                            <p>Achieve measurable success with our tailored strategies and solutions. We deliver consistent, impactful outcomes that drive growth and exceed expectations.</p>
                         </div>
                     </div>
-                </div>
-                <div class="product-block active mix TECHNOLOGY col-lg-8 col-md-8 col-sm-12">
-                    <div class="inner-box">
-                        <div class="content" style="text-align: left">
-                            <div class="text">
-                                As an online marketing agency, the latest technology usage plays a big role. So, team Nugortech IT always stays updated with different technology. With proper training and guidance, each member of Nugortech IT stays technologically advanced.
-                            </div>
-                            <div class="text py-3" style="color: #F94A29">
-                                We are digital marketers. Striving for customer-centric service is our target. Hence, from first to last in any project we utilize software that suits the best.
-                            </div>
-                            <div class="text">
-                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> WordPress and other advanced digital marketing tools <br>
-                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Javascript,React,Node.js, PHP, Laravel, Vue.js, etc. for web services <br>
-                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> SketchUp, Maya, AutoCAD, Cinema 4D, etc for 3D modeling and rendering
-                            </div>
+                    <div class="space20"></div>
+                    <div class="works-content-box">
+                        <div class="icons">
+                            <img src="{{ asset('frontend') }}/img/icons/works-icons8.svg" alt="">
                         </div>
-                    </div>
-                </div>
-                <div class="product-block mix SUPPORT col-lg-4 col-md-4 col-sm-12 ">
-                    <div class="inner-box">
                         <div class="content">
-                            <div class="image-box">
-                                <figure class="image overlay-anim"><img
-                                        src="{{ asset('frontend/images/s-1.webp') }}" alt="s-1">
-                                </figure>
-                            </div>
+                            <a href="#">Customized Solutions</a>
+                            <p>We offer personalized strategies designed to meet your unique needs. Our tailored solutions ensure maximum impact, helping you achieve your specific business goals effectively.</p>
                         </div>
                     </div>
-                </div>
-                <div class="product-block mix SUPPORT col-lg-8 col-md-8 col-sm-12" >
-                    <div class="inner-box">
-                        <div class="content" style="text-align: left">
-                            <div class="text">
-                                From assigning tasks to submitting the final project we give all time support for you. Remarkably, you get everything with us that you need for your online business. No matter if you are a well-established brand or just a start-up, we do our best for the perfect support.
-                            </div>
-                            <div class="text py-3" style="color: #F94A29">
-                                Importantly, we have cross-functional mates. This is the fact that makes our team skilled in different sectors. Whatever you need for digital marketing, you can get complete support from us.
-                            </div>
-                            <div class="text">
-                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Transparent support system, accessible to all clients <br>
-                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Accurate and faster response <br>
-                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Friendly online consultants <br>
-                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> 24/7 online support
-                            </div>
+                    <div class="space20"></div>
+                    <div class="works-content-box">
+                        <div class="icons">
+                            <img src="{{ asset('frontend') }}/img/icons/works-icons9.svg" alt="">
                         </div>
-                    </div>
-                </div>
-                <div class="product-block mix FUNCTIONAL col-lg-4 col-md-4 col-sm-12">
-                    <div class="inner-box">
                         <div class="content">
-                            <div class="image-box">
-                                <figure class="image overlay-anim"><img
-                                        src="{{ asset('frontend/images/s-2.webp') }}" alt="s-2">
-                                </figure>
-                            </div>
+                            <a href="#">Dedicated Support</a>
+                            <p>Our team is committed to providing you with continuous, reliable support. We are here to assist you at every step, ensuring your success with prompt, personalized service whenever you need it.</p>
                         </div>
                     </div>
                 </div>
-                <div class="product-block mix FUNCTIONAL col-lg-8 col-md-8 col-sm-12">
-                    <div class="inner-box">
-                        <div class="content" style="text-align: left">
-                            <div class="text">
-                                We are team Nugortech IT. We are crazy strategy geniuses, inventive writers, deep data-divers, and project management masterminds. And all together we are a whole that’s bigger than the total of its parts.
+            </div>
+            <div class="col-lg-6">
+                <div class="about-all-images-area">
+                    <img src="{{ asset('frontend') }}/img/elements/elements14.png" alt="" class="elements12 keyframe5">
+                    <img src="{{ asset('frontend') }}/img/elements/elements15.png" alt="" class="elements13 keyframe5">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="img1 image-anime">
+                                <div class="space100"></div>
+                                <img src="{{ asset('frontend') }}/img/all-images/about-img6.png" alt="">
                             </div>
-                            <div class="text py-3" style="color: #F94A29">
-                                There are several reasons we gather from different backgrounds. So, working with Nugortech IT is easier than looking for each service separately.
-                            </div>
-                            <div class="text">
-                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Intelligent analysts, SEO experts, and creative content writers <br>
-                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Skilled and experienced mad developers <br>
-                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Innovative and jolley graphic designers <br>
-                                <i class="fa-solid fa-check" style="color: #f94a29;"></i> Talented 3D artists
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="img2 image-anime">
+                                <img src="{{ asset('frontend') }}/img/all-images/about-img5.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -144,7 +110,79 @@
             </div>
         </div>
     </div>
-</section>
+</div>
+<!--===== WORK AREA ENDS =======-->
+
+<!--===== SKILLS AREA STARTS =======-->
+<div class="skills-section-area sp2">
+    <img src="{{ asset('frontend') }}/img/bg/cta-bg1.png" alt="" class="cta-bg1 aniamtion-key-2">
+    <img src="{{ asset('frontend') }}/img/bg/cta-bg2.png" alt="" class="cta-bg2 aniamtion-key-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 m-auto">
+                <div class="skills-header text-center heading2">
+                    <h5>Skills</h5>
+                    <h2>Our Skills</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-10 m-auto">
+            <div class="circle-progress-area">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="progresbar">
+                            <div class="progressbar">
+                                <div class="circle" data-percent="100">
+                                    <canvas></canvas>
+                                    <div>100%</div>
+                                </div>
+                            </div>
+                            <p>Web</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="progresbar">
+                            <div class="progressbar">
+                                <div class="circle two" data-percent="100">
+                                    <canvas></canvas>
+                                    <div>100%</div>
+                                </div>
+                            </div>
+                            <p>Graphics Design</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="progresbar">
+                            <div class="progressbar">
+                                <div class="circle three" data-percent="100">
+                                    <canvas></canvas>
+                                    <div>100%</div>
+                                </div>
+                            </div>
+                            <p>SEO</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="progresbar">
+                            <div class="progressbar">
+                                <div class="circle four" data-percent="100">
+                                    <canvas></canvas>
+                                    <div>100%</div>
+                                </div>
+                            </div>
+                            <p>Digital Marketing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--===== SKILLS AREA ENDS =======-->
+
 
 @endsection
 

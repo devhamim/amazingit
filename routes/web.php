@@ -241,32 +241,32 @@ Route::post('/permission/store', [RoleController::class, 'perimission_store'])->
 
 /******* Frontend start here *********/
 
-// Route::get('/services', [FrontendController::class, 'our_services'])->name('our.services');
-// Route::get('/services/{slug}', [FrontendController::class, 'services_product'])->name('services.product');
-// Route::get('/services/details/{slug}', [FrontendController::class, 'services_product_details'])->name('services.product.details');
-// Route::post('/services/product/checkout', [FrontendController::class, 'services_product_checkout'])->name('services.product.checkout');
-// Route::post('/services/order/checkout', [FrontendController::class, 'services_order_checkout'])->name('services.order.checkout');
-// Route::get('/service/order/otp', [FrontendController::class, 'service_order_otp'])->name('service.order.otp');
-// Route::post('/number/otp', [FrontendController::class, 'number_otp'])->name('number.otp');
-// Route::get('/service/order/success', [FrontendController::class, 'service_order_success'])->name('service.order.success');
+Route::get('/services', [FrontendController::class, 'our_services'])->name('our.services');
+Route::get('/services/{slug}', [FrontendController::class, 'services_product'])->name('services.product');
+Route::get('/services/details/{slug}', [FrontendController::class, 'services_product_details'])->name('services.product.details');
+Route::post('/services/product/checkout', [FrontendController::class, 'services_product_checkout'])->name('services.product.checkout');
+Route::post('/services/order/checkout', [FrontendController::class, 'services_order_checkout'])->name('services.order.checkout');
+Route::get('/service/order/otp', [FrontendController::class, 'service_order_otp'])->name('service.order.otp');
+Route::post('/number/otp', [FrontendController::class, 'number_otp'])->name('number.otp');
+Route::get('/service/order/success', [FrontendController::class, 'service_order_success'])->name('service.order.success');
 
-// Route::get('/privacy/policy', [FrontendController::class, 'privacy_policy'])->name('privacy.policy');
-// Route::get('/terms', [FrontendController::class, 'terms'])->name('terms');
-// Route::get('/about', [FrontendController::class, 'about'])->name('about');
-// Route::get('/products', [FrontendController::class, 'our_products'])->name('our.products');
-// Route::get('/product/details/{slug}', [FrontendController::class, 'product_details'])->name('product.details');
-// Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
-// Route::get('/blog/{slug}', [FrontendController::class, 'blog_details'])->name('blog.details');
-// Route::post('/blog/comment/store', [FrontendController::class, 'blog_comment_store'])->name('blog.comment.store');
-// Route::get('/portfolio/details/{slug}', [FrontendController::class, 'portfolio_details'])->name('portfolio.details');
-// Route::post('/product/comment/store', [FrontendController::class, 'product_comment_store'])->name('product.comment.store');
-// Route::get('/cliends', [FrontendController::class, 'our_cliends'])->name('our.cliends');
-// Route::get('/protfolio', [FrontendController::class, 'our_protfolio'])->name('our.protfolio');
-// Route::post('/consultancy/store', [FrontendController::class, 'consultancy_store'])->name('consultancy.store');
+Route::get('/privacy/policy', [FrontendController::class, 'privacy_policy'])->name('privacy.policy');
+Route::get('/terms', [FrontendController::class, 'terms'])->name('terms');
+Route::get('/about', [FrontendController::class, 'about'])->name('about');
+Route::get('/products', [FrontendController::class, 'our_products'])->name('our.products');
+Route::get('/product/details/{slug}', [FrontendController::class, 'product_details'])->name('product.details');
+Route::get('/our/blogs', [FrontendController::class, 'our_blogs'])->name('our.blogs');
+Route::get('/blog/{slug}', [FrontendController::class, 'blog_details'])->name('blog.details');
+Route::post('/blog/comment/store', [FrontendController::class, 'blog_comment_store'])->name('blog.comment.store');
+Route::get('/portfolio/details/{slug}', [FrontendController::class, 'portfolio_details'])->name('portfolio.details');
+Route::post('/product/comment/store', [FrontendController::class, 'product_comment_store'])->name('product.comment.store');
+Route::get('/cliends', [FrontendController::class, 'our_cliends'])->name('our.cliends');
+Route::get('/protfolio', [FrontendController::class, 'our_protfolio'])->name('our.protfolio');
+Route::post('/consultancy/store', [FrontendController::class, 'consultancy_store'])->name('consultancy.store');
 
-// // paymentmethod
-// Route::get('/service/order/cancel', [FrontendController::class, 'service_order_cancel'])->name('service.order.cancel');
-// Route::get('/service/order/ipn', [FrontendController::class, 'service_order_ipn'])->name('service.order.ipn');
+// paymentmethod
+Route::get('/service/order/cancel', [FrontendController::class, 'service_order_cancel'])->name('service.order.cancel');
+Route::get('/service/order/ipn', [FrontendController::class, 'service_order_ipn'])->name('service.order.ipn');
 
 // customer dashboard
 Route::get('/customer/dashboard', [customerdashboard::class, 'customer_dashboard'])->name('customer.dashboard');
