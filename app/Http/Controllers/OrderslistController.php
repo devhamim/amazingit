@@ -531,13 +531,14 @@ We are started working on your order at Amaizing IT. Our team is dedicated to de
 Best Regards,
 Amaizing IT
 www.amaizingit.com';
-
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;
 
     $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
 
     $response = Http::get($smsqUrl);
+    echo $response;
+    die();
 }
 
 // due payment
