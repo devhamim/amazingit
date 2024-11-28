@@ -182,7 +182,5 @@
     </div>
 </div>
 <!--===== SKILLS AREA ENDS =======-->
-
-
 @endsection
 

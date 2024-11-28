@@ -167,10 +167,10 @@ class FrontendController extends Controller
                 'created_at'=>Carbon::now(),
             ]);
 
-    $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+    $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617618342";
-    $smsqMessage = 'Your nugortechit 6 digit verify code is '.$mobile_verify;
+    $smsqSenderId = "8809617622754";
+    $smsqMessage = 'Your Amaizing IT 6 digit verify code is '.$mobile_verify;
 
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->phone;

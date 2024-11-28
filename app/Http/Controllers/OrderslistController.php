@@ -333,17 +333,17 @@ function orders_store(Request $request){
             echo 'nai';
         }
     }
-    $smsqApiKey = "yA9Mfs1jpLx0bSjdi518";
+    $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617618342";
+    $smsqSenderId = "8809617622754";
     $smsqMessage = 'Dear ' .$request->customer_name.',
-Thank you for placing your order with Nugortech IT!
+Thank you for placing your order with Amaizing IT!
 Order Number: #'.$order_id.'
 Our team will begin working on your order shortly. Expect updates soon!
 
 Best Regards,
-Nugortech IT
-www.nugortechit.com';
+Amaizing IT
+www.amaizingit.com';
 
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;
@@ -521,16 +521,16 @@ public function orders_update(Request $request)
 
     // on going
 if($request->status == 2 && $currentStatus != 2){
-    $smsqApiKey = "yA9Mfs1jpLx0bSjdi518";
+    $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617618342";
+    $smsqSenderId = "8809617622754";
     $smsqMessage = 'Hi ' .$request->customer_name.',
 Order #'.$order_id.' Update:
-We are started working on your order at Nugortech IT. Our team is dedicated to delivering great results. Stay tuned for more updates!
+We are started working on your order at Amaizing IT. Our team is dedicated to delivering great results. Stay tuned for more updates!
 
 Best Regards,
-Nugortech IT
-www.nugortechit.com';
+Amaizing IT
+www.amaizingit.com';
 
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;
@@ -542,9 +542,9 @@ www.nugortechit.com';
 
 // due payment
 if($request->status == 3 && $currentStatus != 3){
-    $smsqApiKey = "yA9Mfs1jpLx0bSjdi518";
+    $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "Random";
+    $smsqSenderId = "8809617622754";
     $smsqMessage = 'Hi';
 
     $smsqMessage = urlencode($smsqMessage);
@@ -556,15 +556,15 @@ if($request->status == 3 && $currentStatus != 3){
 }
 // Refund
 if($request->status == 4 && $currentStatus != 4){
-    $smsqApiKey = "yA9Mfs1jpLx0bSjdi518";
+    $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617618342";
+    $smsqSenderId = "8809617622754";
     $smsqMessage = 'Hi ' .$request->customer_name.',
 Great news! Your refund for order #'.$order_id.' is complete. The refunded amount should now be reflected in your account. If you have any further questions, feel free to contact us.
 
 Best Regards,
-Nugortech IT
-www.nugortechit.com';
+Amaizing IT
+www.amaizingit.com';
 
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;
@@ -575,15 +575,15 @@ www.nugortechit.com';
 }
 // Completed
 if($request->status == 5 && $currentStatus != 5){
-    $smsqApiKey = "yA9Mfs1jpLx0bSjdi518";
+    $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617618342";
+    $smsqSenderId = "8809617622754";
     $smsqMessage = 'Hi ' .$request->customer_name.',
 Good news! Your order #'.$order_id.' has been successfully completed. We hope you are satisfied with our service. If you have any questions or feedback, feel free to reach out.
 
 Best Regards,
-Nugortech IT
-www.nugortechit.com';
+Amaizing IT
+www.amaizingit.com';
 
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;
@@ -594,15 +594,15 @@ www.nugortechit.com';
 }
 // Canceled
 if($request->status == 6 && $currentStatus != 6){
-    $smsqApiKey = "yA9Mfs1jpLx0bSjdi518";
+    $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617618342";
+    $smsqSenderId = "8809617622754";
     $smsqMessage = 'Hi ' .$request->customer_name.',
 We regret to inform you that your order #'.$order_id.' has been canceled. If you have any concerns or require further assistance, feel free to contact us.
 
 Best Regards,
-Nugortech IT
-www.nugortechit.com';
+Amaizing IT
+www.amaizingit.com';
 
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$request->customer_phone;

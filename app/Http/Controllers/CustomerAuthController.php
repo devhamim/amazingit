@@ -27,9 +27,9 @@ class CustomerAuthController extends Controller
                 'mobile_verify'=>$verify_code,
             ]);
 
-            $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+            $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
             // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-            $smsqSenderId = "8809617618342";
+            $smsqSenderId = "8809617622754";
             $smsqMessage = 'Your nugortechit 6 digit verify code is '.$verify_code;
 
             $smsqMessage = urlencode($smsqMessage);
@@ -122,7 +122,7 @@ class CustomerAuthController extends Controller
 
     // customer_registers
     function customer_registers(){
-        
+
         return view('customer.customer_registers');
     }
 
@@ -147,9 +147,9 @@ class CustomerAuthController extends Controller
                 'mobile_verify'=>$mobile_verify,
                 'created_at'=>Carbon::now(),
             ]);
-            $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+            $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
             // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-            $smsqSenderId = "8809617618342";
+            $smsqSenderId = "8809617622754";
             $smsqMessage = 'Your nugortechit 6 digit verify code is '.$mobile_verify;
 
             $smsqMessage = urlencode($smsqMessage);

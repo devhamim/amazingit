@@ -128,17 +128,17 @@ if (serviceOrderCart::where('id', $request->id)->exists()) {
         'price' => $serviceOrderCart->price,
     ]);
 
-    $smsqApiKey = "RUJ5s4yijCz2HAQKzpMk";
+    $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
-    $smsqSenderId = "8809617618342";
+    $smsqSenderId = "8809617622754";
     $smsqMessage = 'Dear ' .$serviceOrderCart->name.',
-Thank you for placing your order with Nugortech IT!
+Thank you for placing your order with Amaizing IT!
 Order Number: #'.$order_id.'
 Our team will begin working on your order shortly. Expect updates soon!
 
 Best Regards,
-Nugortech IT
-www.nugortechit.com';
+Amaizing IT
+www.amaizingit.com';
 
     $smsqMessage = urlencode($smsqMessage);
     $smsqMobileNumbers = '+88' .$serviceOrderCart->phone;
