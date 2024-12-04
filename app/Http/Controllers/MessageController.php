@@ -14,22 +14,46 @@ class MessageController extends Controller
     }
 
     //message_sent
-    function message_sent(Request $request){
-        $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
-        $smsqSenderId = "8809617622754";
-        $smsqMessage = $request->message;
+    public function message_sent(Request $request)
+{
+    $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
+    $smsqSenderId = "8809617622754";
+    $smsqMessage = $request->message;
 
-        $smsqMessage = urlencode($smsqMessage);
-        $smsqMobileNumbers = '+88' .$request->number;
+    $smsqMessage = urlencode($smsqMessage);
 
-        $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
+    $numbers = explode(',', $request->number);
 
-        $response = Http::get($smsqUrl);
-        if ($response->successful()) {
-            return back()->withSuccess('Message send successfully.');
-        } else {
-            Log::error("SMSQ API Request failed. Response: " . $response->status());
-            return back()->withErrors(['sms_error' => 'Failed to send SMS to customer.']);
-        }
+    $smsqMobileNumbers = implode(',', array_map(fn($number) => '+88' . trim($number), $numbers));
+
+    $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
+
+    $response = Http::get($smsqUrl);
+
+    if ($response->successful()) {
+        return back()->withSuccess('Message sent successfully to all numbers.');
+    } else {
+        Log::error("SMSQ API Request failed. Response: " . $response->status());
+        return back()->withErrors(['sms_error' => 'Failed to send SMS to one or more numbers.']);
     }
+}
+
+    // function message_sent(Request $request){
+    //     $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
+    //     $smsqSenderId = "8809617622754";
+    //     $smsqMessage = $request->message;
+
+    //     $smsqMessage = urlencode($smsqMessage);
+    //     $smsqMobileNumbers = '+88' .$request->number;
+
+    //     $smsqUrl = "http://139.99.39.237/api/smsapi?api_key=$smsqApiKey&type=text&number=$smsqMobileNumbers&senderid=$smsqSenderId&message=$smsqMessage";
+
+    //     $response = Http::get($smsqUrl);
+    //     if ($response->successful()) {
+    //         return back()->withSuccess('Message send successfully.');
+    //     } else {
+    //         Log::error("SMSQ API Request failed. Response: " . $response->status());
+    //         return back()->withErrors(['sms_error' => 'Failed to send SMS to customer.']);
+    //     }
+    // }
 }

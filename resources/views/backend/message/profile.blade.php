@@ -13,13 +13,13 @@
                     <li class="breadcrumb-item active">Messages</li>
                 </ol>
             </div>
-            <form action="{{route('message.sent')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('message.sent')}}" method="POST">
                 @csrf
             <div class=" overflow-hidden">
                 <div class="row">
                     <div class="col-md-7 m-auto card">
                             <div class="tab-content">
-                                <div class="tab-pane fade show active" id="account-general">
+                                <div class="tab-pane fade show active">
                                     <div class="card-body">
 
                                         <div class="form-group">
