@@ -56,28 +56,27 @@
             border-radius: 5px;
         }
 
-
         /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #0e0c28 #ffffff;
-  }
+        /* Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #0e0c28 #ffffff;
+        }
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 10px;
-  }
+        /* Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 10px;
+        }
 
-  *::-webkit-scrollbar-track {
-    background: #ffffff;
-  }
+        *::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #0e0c28;
-    border-radius: 55px;
-    border: 30px outset #ffffff;
-  }
+        *::-webkit-scrollbar-thumb {
+            background-color: #0e0c28;
+            border-radius: 55px;
+            border: 30px outset #ffffff;
+        }
     </style>
 </head>
 
@@ -248,6 +247,12 @@
                         </ul>
                     </li>
 
+                    <li class="sidenav-item {{ Request::is('message*') ? 'active open' : '' }}">
+                        <a href="{{route('message.view')}}" class="sidenav-link">
+                            <i class="sidenav-icon lnr lnr-car"></i>
+                            <div>Messages</div>
+                        </a>
+                    </li>
                     <li class="sidenav-item {{ Request::is('courier*') ? 'active open' : '' }}">
                         <a href="{{route('courier.list')}}" class="sidenav-link">
                             <i class="sidenav-icon lnr lnr-car"></i>

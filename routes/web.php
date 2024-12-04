@@ -32,6 +32,7 @@ use App\Http\Controllers\printInvoiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\invoiceController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\MetaController;
 use App\Http\Controllers\pandingcustomerdashboard;
 use App\Http\Controllers\PDFController;
@@ -390,3 +391,6 @@ Route::get('/successful/online/business/with/digital/marketing', [LandingControl
 Route::get('/consultancy/list', [ConsultancyController::class, 'consultancy_list'])->name('consultancy.list');
 Route::get('/consultancy/delete/{id}', [ConsultancyController::class, 'consultancy_delete'])->name('consultancy.delete');
 
+// message
+Route::get('/message/view', [MessageController::class, 'message_view'])->name('message.view');
+Route::post('/message/sent', [MessageController::class, 'message_sent'])->name('message.sent');
