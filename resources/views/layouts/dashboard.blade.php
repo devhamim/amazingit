@@ -281,7 +281,7 @@
                     <li class="sidenav-item {{ Request::is('subscribe/list', 'contact/list') ? 'active open' : '' }}">
                         <a href="javascript:" class="sidenav-link sidenav-toggle">
                             <i class="sidenav-icon lnr lnr-license"></i>
-                            <div>Contect</div>
+                            <div>Contact</div>
                         </a>
                         <ul class="sidenav-menu">
                             <li class="sidenav-item {{ Request::is('subscribe/list') ? 'active' : '' }}">
