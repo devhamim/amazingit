@@ -47,7 +47,7 @@
         <form action="{{ route('message.update') }}" method="post">
             @csrf
             <div class="row mt-5">
-                <div class="col-md-7 col-12">
+                <div class="col-md-7 m-auto card">
                     <div class="card">
                         <div class="card-body">
                             <div class="form-row">
