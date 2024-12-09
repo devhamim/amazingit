@@ -37,12 +37,37 @@
                                 </div>
                             </div>
                             <div class="text-right mt-3">
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="submit" class="btn btn-primary">Sent Message</button>
                             </div>
                     </div>
                 </div>
             </div>
         </form>
+
+        <form action="{{ route('message.update') }}" method="post">
+            @csrf
+            <div class="row mt-5">
+                <div class="col-md-12 col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-row">
+                                @foreach(['status', 'ongoing', 'duepayment', 'refund', 'completed', 'canceled', 'orderstore', 'frontorder'] as $field)
+                                <div class="form-group col-3">
+                                    <label for="{{ $field }}">{{ ucfirst($field) }}</label>
+                                    <input type="hidden" name="{{ $field }}" value="0"> <!-- Default value for unchecked -->
+                                    <input type="checkbox" name="{{ $field }}" id="{{ $field }}" value="1" {{ $messagestatus->$field == 1 ? 'checked' : '' }}>
+                                </div>
+                                @endforeach
+                                <div class="form-group col-12 m-auto text-center py-3">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
 
         </div>
         <!-- [ content ] End -->

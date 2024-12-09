@@ -11,6 +11,7 @@ use App\Models\Billingdetails;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use App\Models\customers;
+use App\Models\MessageStatus;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use DB;
@@ -333,6 +334,7 @@ function orders_store(Request $request){
             echo 'nai';
         }
     }
+if(MessageStatus::where('status', 1)->where('orderstore', 1)->exists()){
     $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
     $smsqSenderId = "8809617622754";
@@ -357,8 +359,11 @@ www.amaizingit.com';
         Log::error("SMSQ API Request failed. Response: " . $response->status());
         return back()->withErrors(['sms_error' => 'Failed to send SMS to customer.']);
     }
-
+}
+else{
+    echo 'ooooo';
     return back()->withSuccess('Order added successfully.');
+}
 }
 
 
@@ -520,6 +525,7 @@ public function orders_update(Request $request)
     }
 
     // on going
+    if(MessageStatus::where('status', 1)->where('ongoing', 1)->exists()){
 if($request->status == 2 && $currentStatus != 2){
     $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
@@ -538,8 +544,9 @@ www.amaizingit.com';
 
     $response = Http::get($smsqUrl);
 }
-
+    }
 // due payment
+    if(MessageStatus::where('status', 1)->where('duepayment', 1)->exists()){
 if($request->status == 3 && $currentStatus != 3){
     $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
@@ -553,7 +560,9 @@ if($request->status == 3 && $currentStatus != 3){
 
     $response = Http::get($smsqUrl);
 }
+    }
 // Refund
+    if(MessageStatus::where('status', 1)->where('refund', 1)->exists()){
 if($request->status == 4 && $currentStatus != 4){
     $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
@@ -572,7 +581,9 @@ www.amaizingit.com';
 
     $response = Http::get($smsqUrl);
 }
+    }
 // Completed
+if(MessageStatus::where('status', 1)->where('completed', 1)->exists()){
 if($request->status == 5 && $currentStatus != 5){
     $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
@@ -591,7 +602,9 @@ www.amaizingit.com';
 
     $response = Http::get($smsqUrl);
 }
+    }
 // Canceled
+    if(MessageStatus::where('status', 1)->where('canceled', 1)->exists()){
 if($request->status == 6 && $currentStatus != 6){
     $smsqApiKey = "R2yrTVtSRQyHlXbWFYOO";
     // $smsqClientId = "e9d52cb4-e058-406c-a8ac-30edee778177";
@@ -610,7 +623,7 @@ www.amaizingit.com';
 
     $response = Http::get($smsqUrl);
 }
-
+    }
 
     return redirect()->route('orders.list')->withSuccess('Order updated successfully');
 }

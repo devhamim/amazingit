@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MessageStatus;
 use Illuminate\Http\Request;
 use Log;
 use Illuminate\Support\Facades\Http;
@@ -10,7 +11,10 @@ class MessageController extends Controller
 {
     //message_view
     function message_view(){
-        return view('backend.message.profile');
+        $messagestatus = MessageStatus::first();
+        return view('backend.message.profile',[
+            'messagestatus'=>$messagestatus,
+        ]);
     }
 
     //message_sent
@@ -56,4 +60,22 @@ class MessageController extends Controller
     //         return back()->withErrors(['sms_error' => 'Failed to send SMS to customer.']);
     //     }
     // }
+
+    // message_update
+    function message_update(Request $request){
+        $validatedData = $request->validate([
+            'status' => 'required',
+            'ongoing' => 'required',
+            'duepayment' => 'required',
+            'refund' => 'required',
+            'completed' => 'required',
+            'canceled' => 'required',
+            'orderstore' => 'required',
+            'frontorder' => 'required',
+        ]);
+
+        $messagestatus = MessageStatus::first();
+        $messagestatus->update($validatedData);
+        return redirect()->back()->with('success', 'Message status updated successfully.');
+    }
 }

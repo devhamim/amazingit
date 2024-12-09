@@ -394,3 +394,4 @@ Route::get('/consultancy/delete/{id}', [ConsultancyController::class, 'consultan
 // message
 Route::get('/message/view', [MessageController::class, 'message_view'])->name('message.view');
 Route::post('/message/sent', [MessageController::class, 'message_sent'])->name('message.sent');
+Route::post('/message/update', [MessageController::class, 'message_update'])->name('message.update');
