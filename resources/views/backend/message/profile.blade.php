@@ -47,14 +47,14 @@
         <form action="{{ route('message.update') }}" method="post">
             @csrf
             <div class="row mt-5">
-                <div class="col-md-12 col-12">
+                <div class="col-md-7 col-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="form-row">
                                 @foreach(['status', 'ongoing', 'duepayment', 'refund', 'completed', 'canceled', 'orderstore', 'frontorder'] as $field)
                                 <div class="form-group col-3">
                                     <label for="{{ $field }}">{{ ucfirst($field) }}</label>
-                                    <input type="hidden" name="{{ $field }}" value="0"> <!-- Default value for unchecked -->
+                                    <input type="hidden" name="{{ $field }}" value="0">
                                     <input type="checkbox" name="{{ $field }}" id="{{ $field }}" value="1" {{ $messagestatus->$field == 1 ? 'checked' : '' }}>
                                 </div>
                                 @endforeach
