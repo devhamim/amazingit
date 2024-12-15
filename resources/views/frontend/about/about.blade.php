@@ -399,9 +399,9 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="justify-content: center;">
             @foreach ($teams->take(12) as $team)
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6 mb-5">
                     <div class="team-boxarea">
                         <div class="img1">
                             <img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt="{{ $team->name }}">

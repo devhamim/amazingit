@@ -24873,7 +24873,7 @@ Location:
   }
 }
 .contact1-section-area .contact-info-area {
-  background: var(--ztc-text-text-2);
+  background: #4E2FDA;
   border-radius: 8px;
   padding: 40px 40px;
   position: relative;
@@ -24915,7 +24915,7 @@ Location:
   display: inline-block;
   border-radius: 50%;
   text-align: center;
-  background: #222326;
+  background: #4E2FDA;
   line-height: 80px;
   margin: 0 24px 0 0;
   transition: all 0.4s;
@@ -25046,7 +25046,7 @@ Location:
   border: 1px solid #E6E6E6;
   border-radius: 8px;
   margin-top: 24px;
-  height: 120px;
+  height: 200px;
 }
 .contact1-section-area .contact-boxarea .input-area textarea::-moz-placeholder {
   font-family: var(--ztc-family-font1);

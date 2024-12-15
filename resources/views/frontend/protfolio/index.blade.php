@@ -5,6 +5,22 @@
 @section('meta_tag', $metaSettings->meta_tag ?? 'Protfolios' )
 @section('content')
 
+
+<div class="about-header-area" style="background-image: url({{asset('frontend')}}/img/bg/inner-header.png); background-repeat: no-repeat; background-size: cover; background-position: center;">
+    <img src="{{asset('frontend')}}/img/elements/elements1.png" alt="" class="elements1 aniamtion-key-1">
+    <img src="{{asset('frontend')}}/img/elements/star2.png" alt="" class="star2 keyframe5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 m-auto">
+                <div class="about-inner-header heading9 text-center">
+                    <h1>Our Case Study</h1>
+                    <a href="index.html">Home <i class="fa-solid fa-angle-right"></i> Case Study <i class="fa-solid fa-angle-right"></i> <span>Our Case Study</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--===== CASE AREA STARTS =======-->
 <div class="case-inner-section-area sp1">
     <div class="container">

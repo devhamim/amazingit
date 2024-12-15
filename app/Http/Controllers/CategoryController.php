@@ -30,7 +30,7 @@ class CategoryController extends Controller
     function category_store(Request $request) {
         $request->validate([
             'category_name' => 'required|unique:categories',
-            'category_desp' => 'required|max:50',
+            'category_desp' => 'require',
             'category_image' => 'required|mimes:jpg,jpeg,gif,png,webp|file|max:5000',
         ]);
 
@@ -76,7 +76,7 @@ class CategoryController extends Controller
         print_r($request->all());
         $request->validate([
             'category_name' => 'required',
-            'category_desp' => 'required|max:50',
+            'category_desp' => 'required',
             'category_image' => 'mimes:jpg,jpeg,gif,png,webp|file|max:5000',
         ]);
         if($request->category_image == '') {

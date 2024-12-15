@@ -316,6 +316,37 @@
   </div>
   <!--===== CASE AREA ENDS =======-->
 
+  <!--===== TEAM AREA STARTS =======-->
+<div class="team-inner-section-area sp2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <div class="team2-header-area text-center heading2">
+                    <h5>Our Team</h5>
+                    <h2>Meet With Our Expert Team</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="justify-content: center;">
+            @foreach ($teams->take(12) as $team)
+                <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="team-boxarea">
+                        <div class="img1">
+                            <img src="{{ asset('uploads/team') }}/{{ $team->image }}" alt="{{ $team->name }}">
+                        </div>
+
+                        <div class="content">
+                            <a>{{ $team->name }}</a>
+                            <p>{{ $team->designation }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+
+  <!--===== TEAM AREA ENDS =======-->
 
   <!--===== TESTIMONIAL AREA STARTS =======-->
   <div class="testimonial1-section-area sp1 bg2">

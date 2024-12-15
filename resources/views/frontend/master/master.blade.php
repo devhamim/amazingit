@@ -85,7 +85,7 @@
               </div>
               <div class="btn-area">
 
-                <a href="{{ route('contact') }}" class="header-btn1">Free Consultation <span><i class="fa-solid fa-arrow-right"></i></span></a>
+                <a href="https://wa.me/+8801303605163?text=Hello%20how%20can%20i%20help%20you" target="_blank" class="header-btn1">Free Consultation <span><i class="fa-solid fa-arrow-right"></i></span></a>
               </div>
 
               <div class="header-search-form-wrapper">
@@ -211,7 +211,7 @@
             <h2>Ready To Take Your Business To <br class="d-md-block d-none"> The Next Level</h2>
             <p>Let us help you grow with our expert solutions in web design, development, <br class="d-md-block d-none"> SEO, and digital marketing.</p>
             <div class="btn-area text-center">
-              <a href="{{ route('contact') }}" class="header-btn1">Free Consultation <span><i class="fa-solid fa-arrow-right"></i></span></a>
+              <a href="https://wa.me/+8801303605163?text=Hello%20how%20can%20i%20help%20you" target="_blank" class="header-btn1">Free Consultation <span><i class="fa-solid fa-arrow-right"></i></span></a>
             </div>
           </div>
         </div>
