@@ -13,13 +13,13 @@
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="row align-items-center m-l-0">
+                    {{-- <div class="row align-items-center m-l-0">
                         <div class="col-sm-6">
                         </div>
                         <div class="col-sm-6 text-right">
                             <button class="btn btn-success btn-sm mb-3 btn-round" data-toggle="modal" data-target="#user_register"><i class="feather icon-plus"></i>Add Social Media</button>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="table table-responsive table-hover">
                         <table id="report-table" class="table table-bordered text-center table-striped">
                             <thead>
