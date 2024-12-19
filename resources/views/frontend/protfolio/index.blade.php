@@ -14,7 +14,7 @@
             <div class="col-lg-8 m-auto">
                 <div class="about-inner-header heading9 text-center">
                     <h1>Our Case Study</h1>
-                    <a href="index.html">Home <i class="fa-solid fa-angle-right"></i> Case Study <i class="fa-solid fa-angle-right"></i> <span>Our Case Study</span></a>
+                    <a href="{{ url('/') }}">Home <i class="fa-solid fa-angle-right"></i> Case Study <i class="fa-solid fa-angle-right"></i> <span>Our Case Study</span></a>
                 </div>
             </div>
         </div>

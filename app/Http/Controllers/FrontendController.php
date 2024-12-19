@@ -24,6 +24,7 @@ use App\Models\serviceOrderCart;
 use App\Models\shopcategory;
 use App\Models\ShopProduct;
 use App\Models\shopproductgallery;
+use App\Models\skille;
 use App\Models\subscribe;
 use App\Models\team;
 use App\Models\terms_condition;
@@ -86,12 +87,14 @@ class FrontendController extends Controller
         $teams = team::where('status', 1)->get();
         $category= Category::where('status', 1)->take(8)->get();
         $testmonials= testmonial::where('status', 1)->get();
+        $skilles= skille::where('status', 1)->get();
         $metaSettings = Meta::where('pages', 'about')->where('status', 1)->first();
         return view('frontend.about.about', [
             'teams'=>$teams,
             'categoryy' => $category,
             'testmonials' => $testmonials,
             'metaSettings' => $metaSettings,
+            'skilles' => $skilles,
         ]);
     }
 
@@ -99,8 +102,9 @@ class FrontendController extends Controller
     // our_services
     function our_services() {
         $services = Category::where('status', '1')->get();
+        $skilles= skille::where('status', 1)->get();
         $metaSettings = Meta::where('pages', 'services')->where('status', 1)->first();
-        return view('frontend.service.index', compact(['services', 'metaSettings']));
+        return view('frontend.service.index', compact(['services', 'metaSettings', 'skilles']));
     }
 
     // services_product

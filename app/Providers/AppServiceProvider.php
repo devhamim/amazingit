@@ -3,9 +3,11 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use App\Models\media;
 use App\Models\Meta;
 use App\Models\Product;
 use App\Models\setting;
+use App\Models\socialMedia;
 use Illuminate\Support\ServiceProvider;
 use View;
 use Cookie;
@@ -51,6 +53,14 @@ class AppServiceProvider extends ServiceProvider
      // master setting
      View::composer('frontend.master.master', function ($view){
         $view->with('setting', setting::all());
+    });
+     // sister setting
+     View::composer('frontend.master.master', function ($view){
+        $view->with('sisters', media::all());
+    });
+     // social media setting
+     View::composer('frontend.master.master', function ($view){
+        $view->with('socialmedias', socialMedia::first());
     });
      // customer header setting
      View::composer('customer.layout.header', function ($view){

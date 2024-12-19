@@ -37,6 +37,7 @@ class CategoryController extends Controller
         $category_id = Category::insertGetId([
             'category_name' => $request->category_name,
             'category_desp' => $request->category_desp,
+            'color' => $request->color,
             'added_by' => Auth::id(),
             'status' => $request->status,
             'slug'=>Str::slug($request->category_name),
@@ -82,6 +83,7 @@ class CategoryController extends Controller
         if($request->category_image == '') {
             Category::find($request->category_id)->update([
                 'category_name' => $request->category_name,
+                'color' => $request->color,
                 'category_desp' => $request->category_desp,
                 'status' => $request->status,
                 'added_by' => Auth::id(),

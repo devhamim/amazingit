@@ -229,7 +229,13 @@
                             <li class="sidenav-item {{ Request::is('media/list') ? 'active' : '' }}">
                                 <a href="{{route('media.list')}}" class="sidenav-link">
                                     <i class="sidenav-icon lnr lnr-picture"></i>
-                                    <div>Media</div>
+                                    <div>Sister Concern</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('socialmedia/list') ? 'active' : '' }}">
+                                <a href="{{route('socialmedia.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Social Media</div>
                                 </a>
                             </li>
                             <li class="sidenav-item {{ Request::is('cliend/list') ? 'active' : '' }}">
@@ -242,6 +248,12 @@
                                 <a href="{{route('blogs.list')}}" class="sidenav-link">
                                     <i class="sidenav-icon lnr lnr-picture"></i>
                                     <div>Blogs</div>
+                                </a>
+                            </li>
+                            <li class="sidenav-item {{ Request::is('skille/list') ? 'active' : '' }}">
+                                <a href="{{route('skille.list')}}" class="sidenav-link">
+                                    <i class="sidenav-icon lnr lnr-picture"></i>
+                                    <div>Skille</div>
                                 </a>
                             </li>
                         </ul>

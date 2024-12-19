@@ -80,6 +80,7 @@
                   <li><a href="{{ route('about') }}">About</a></li>
                   <li><a href="{{ route('our.services') }}">Services</a></li>
                   <li><a href="{{ route('our.protfolio') }}">Protfolio</a></li>
+                  <li><a href="{{ route('our.blogs') }}">Our Blog</a></li>
                   <li><a href="{{ route('contact') }}">Contact Us</a></li>
                 </ul>
               </div>
@@ -137,6 +138,7 @@
       <li><a href="{{ route('about') }}">About</a></li>
       <li><a href="{{ route('our.services') }}">Services</a></li>
       <li><a href="{{ route('our.protfolio') }}">Protfolio</a></li>
+      <li><a href="{{ route('our.blogs') }}">Our Blog</a></li>
       <li><a href="{{ route('contact') }}">Contact Us</a></li>
     </ul>
 
@@ -230,10 +232,10 @@
           <img width="200px" src="{{ asset('uploads/setting') }}/{{ $setting->first()->white_logo }}" alt="">
           <p>{{ $setting->first()->about }}</p>
           <ul>
-            <li><a href="#"><img src="{{asset('frontend')}}/img/icons/facebook.svg" alt=""></a></li>
-            <li><a href="#"><img src="{{asset('frontend')}}/img/icons/instagram.svg" alt=""></a></li>
-            <li><a href="#"><img src="{{asset('frontend')}}/img/icons/linkedin.svg" alt=""></a></li>
-            <li><a href="#"><img src="{{asset('frontend')}}/img/icons/youtube.svg" alt=""></a></li>
+            <li><a href="{{ $socialmedias->fb }}"><img src="{{asset('frontend')}}/img/icons/facebook.svg" alt=""></a></li>
+            <li><a href="{{ $socialmedias->ig }}"><img src="{{asset('frontend')}}/img/icons/instagram.svg" alt=""></a></li>
+            <li><a href="{{ $socialmedias->in }}"><img src="{{asset('frontend')}}/img/icons/linkedin.svg" alt=""></a></li>
+            <li><a href="{{ $socialmedias->yt }}"><img src="{{asset('frontend')}}/img/icons/youtube.svg" alt=""></a></li>
           </ul>
         </div>
       </div>
@@ -246,6 +248,7 @@
             <li><a href="{{ route('our.services') }}">Services</a></li>
             <li><a href="{{ route('contact') }}">Contact Us</a></li>
             <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
+            <li><a href="{{ route('our.blogs') }}">Our Blog</a></li>
             <li><a href="{{ route('terms') }}">Terms & Conditions</a></li>
           </ul>
         </div>
@@ -263,11 +266,14 @@
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="footer-logo-area3">
-          <h3>Subscribe Our Newsletter</h3>
-          <form action="#">
-            <input type="text" placeholder="Enter Your email">
-            <button class="header-btn1"> Subscribe <span><i class="fa-solid fa-arrow-right"></i></span></button>
-          </form>
+          <h3>Sister Concern</h3>
+          <div class="row mt-3">
+            @foreach($sisters->take(6) as $media)
+                <div class="col-lg-6 col-6">
+                    <img width="100%" src="{{asset('uploads/media')}}/{{$media->file}}" alt="">
+                </div>
+            @endforeach
+          </div>
         </div>
       </div>
     </div>

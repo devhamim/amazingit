@@ -26,12 +26,13 @@
 <div class="service1-section-area sp2">
     <div class="container">
         <div class="row">
+            
             <div class="col-lg-12">
                 <div class="service-all-boxes-area1">
                     <div class="row">
                         @foreach ($services as $service)
-                            <div class="col-lg-3 col-md-6">
-                                <div class="service-boxarea">
+                            <div class="col-lg-3 col-md-6" >
+                                <div class="service-boxarea" style="background: {{ $service->color }}">
                                     <a href="#">{{$service->category_name}}</a>
                                     <div class="space40"></div>
                                     <img src="{{asset('uploads/category')}}/{{$service->category_image}}" alt="">
@@ -129,53 +130,19 @@
         <div class="col-lg-10 m-auto">
             <div class="circle-progress-area">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="progresbar">
+                    @foreach($skilles as $skille)
+                        <div class="col-lg-3 col-md-6">
+                            <div class="progresbar">
                             <div class="progressbar">
-                                <div class="circle" data-percent="100">
-                                    <canvas></canvas>
-                                    <div>100%</div>
+                                <div class="circle" data-percent="{{ $skille->number }}">
+                                <canvas></canvas>
+                                    <div>{{ $skille->number }}%</div>
                                 </div>
                             </div>
-                            <p>Web</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="progresbar">
-                            <div class="progressbar">
-                                <div class="circle two" data-percent="100">
-                                    <canvas></canvas>
-                                    <div>100%</div>
-                                </div>
+                            <p>{{ $skille->name }}</p>
                             </div>
-                            <p>Graphics Design</p>
                         </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="progresbar">
-                            <div class="progressbar">
-                                <div class="circle three" data-percent="100">
-                                    <canvas></canvas>
-                                    <div>100%</div>
-                                </div>
-                            </div>
-                            <p>SEO</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="progresbar">
-                            <div class="progressbar">
-                                <div class="circle four" data-percent="100">
-                                    <canvas></canvas>
-                                    <div>100%</div>
-                                </div>
-                            </div>
-                            <p>Digital Marketing</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -139,7 +139,7 @@
         <div class="col-lg-12">
           <div class="service-all-boxes-area row">
             @foreach ($categoryy->take(4) as $category)
-                <div class="service-boxarea col-lg-3" data-aos="zoom-in" data-aos-duration="800">
+                <div class="service-boxarea col-lg-3" data-aos="zoom-in" data-aos-duration="800" style="background: {{ $category->color }}">
                     <a href="#">{{ $category->category_name }}</a>
                     <div class="space40"></div>
                     <img src="{{ asset('uploads/category') }}/{{ $category->category_image }}" alt="{{ $category->category_image }}" alt="">
@@ -404,7 +404,7 @@
   <!--===== TESTIMONIAL AREA ENDS =======-->
 
   <!--===== BLOG AREA STARTS =======-->
-  {{-- <div class="blog1-scetion-area">
+  <div class="blog1-scetion-area">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 m-auto">
@@ -417,67 +417,31 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="blog-author-boxarea" data-aos="fade-right" data-aos-duration="800">
-            <div class="img1">
-              <img src="{{asset('frontend')}}/img/all-images/blog-img1.png" alt="">
-            </div>
-            <div class="content-area">
-              <div class="tags-area">
-                <ul>
-                  <li><a href="#"><img src="{{asset('frontend')}}/img/icons/contact1.svg" alt="">Ben Stokes</a></li>
-                  <li><a href="#"><img src="{{asset('frontend')}}/img/icons/calender1.svg" alt="">16 August 2023</a></li>
-                </ul>
-              </div>
-              <a href="blog-single.html">10 Essential SEO Tips to Boost Your Website's Ranking</a>
-              <p>Are you looking to improve your website's visibility and attract more organic traffic? </p>
-              <a href="blog-single.html" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-          <div class="space30 d-lg-none d-block"></div>
-        </div>
+        @foreach ($blogs as $blog)
+            <div class="col-lg-4 col-md-6">
+            <div class="blog-author-boxarea" data-aos="fade-right" data-aos-duration="800">
+                <div class="img1">
+                <img src="{{ asset('uploads/blogs') }}/{{ $blog->preview_image }}" alt="{{ $blog->preview_image }}">
+                </div>
+                <div class="content-area">
+                <div class="tags-area">
+                    <ul>
+                    <li><a href="#"><img src="{{asset('frontend')}}/img/icons/contact1.svg" alt="">{{ $blog->author }}</a></li>
+                    <li><a href="#"><img src="{{asset('frontend')}}/img/icons/calender1.svg" alt="">{{ $blog->created_at->format('d M Y') }}</a></li>
+                    </ul>
+                </div>
+                <a href="{{ route('blog.details', $blog->slug) }}">{{ Str::limit($blog->title, 70, '...') }}</a>
 
-        <div class="col-lg-4 col-md-6">
-          <div class="blog-author-boxarea" data-aos="fade-up" data-aos-duration="1000">
-            <div class="img1">
-              <img src="{{asset('frontend')}}/img/all-images/blog-img2.png" alt="">
+                <a href="{{ route('blog.details', $blog->slug) }}" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
             </div>
-            <div class="content-area">
-              <div class="tags-area">
-                <ul>
-                  <li><a href="#"><img src="{{asset('frontend')}}/img/icons/contact1.svg" alt="">Ben Stokes</a></li>
-                  <li><a href="#"><img src="{{asset('frontend')}}/img/icons/calender1.svg" alt="">16 August 2023</a></li>
-                </ul>
-              </div>
-              <a href="blog-single.html">The Power of PPC Advertising: How to Maximize Your ROI</a>
-              <p>Unlock the full potential of your digital marketing strategy with the power of PPC.</p>
-              <a href="blog-single.html" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            <div class="space30 d-lg-none d-block"></div>
             </div>
-          </div>
-          <div class="space30 d-lg-none d-block"></div>
-        </div>
+        @endforeach
 
-        <div class="col-lg-4 col-md-6">
-          <div class="blog-author-boxarea" data-aos="fade-left" data-aos-duration="1200">
-            <div class="img1">
-              <img src="{{asset('frontend')}}/img/all-images/blog-img3.png" alt="">
-            </div>
-            <div class="content-area">
-              <div class="tags-area">
-                <ul>
-                  <li><a href="#"><img src="{{asset('frontend')}}/img/icons/contact1.svg" alt="">Ben Stokes</a></li>
-                  <li><a href="#"><img src="{{asset('frontend')}}/img/icons/calender1.svg" alt="">16 August 2023</a></li>
-                </ul>
-              </div>
-              <a href="blog-single.html">The Importance of Responsive Web Design in the Mobile Age</a>
-              <p>Where mobile devices dominate internet usage, responsive web design more crucial.</p>
-              <a href="blog-single.html" class="readmore">Read More <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
-  </div> --}}
+  </div>
   <!--===== BLOG AREA ENDS =======-->
 
   <!--===== CONTACT AREA STARTS =======-->

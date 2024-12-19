@@ -334,53 +334,19 @@
         <div class="col-lg-10 m-auto">
           <div class="circle-progress-area">
             <div class="row">
-              <div class="col-lg-3 col-md-6">
-                <div class="progresbar">
-                  <div class="progressbar">
-                     <div class="circle" data-percent="100">
-                      <canvas></canvas>
-                         <div>100%</div>
+                @foreach($skilles as $skille)
+                    <div class="col-lg-3 col-md-6">
+                        <div class="progresbar">
+                        <div class="progressbar">
+                            <div class="circle" data-percent="{{ $skille->number }}">
+                            <canvas></canvas>
+                                <div>{{ $skille->number }}%</div>
+                            </div>
+                        </div>
+                        <p>{{ $skille->name }}</p>
+                        </div>
                     </div>
-                  </div>
-                  <p>Web</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6">
-                <div class="progresbar">
-                  <div class="progressbar">
-                    <div class="circle two" data-percent="100">
-                      <canvas></canvas>
-                        <div>100%</div>
-                   </div>
-                 </div>
-                 <p>Graphics Design</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6">
-                <div class="progresbar">
-                  <div class="progressbar">
-                    <div class="circle three" data-percent="100">
-                      <canvas></canvas>
-                       <div>100%</div>
-                    </div>
-                   </div>
-                   <p>SEO</p>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-md-6">
-                <div class="progresbar">
-                  <div class="progressbar">
-                    <div class="circle four" data-percent="100">
-                      <canvas></canvas>
-                       <div>100%</div>
-                    </div>
-                   </div>
-                   <p>Digital Marketing</p>
-                </div>
-              </div>
+                @endforeach
           </div>
           </div>
         </div>

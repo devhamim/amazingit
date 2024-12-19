@@ -42,6 +42,8 @@ use App\Http\Controllers\ShopcategoryController;
 use App\Http\Controllers\ShopOrderController;
 use App\Http\Controllers\ShopProductController;
 use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\skilleController;
+use App\Http\Controllers\socialMediaController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\TestmonialController;
@@ -124,6 +126,20 @@ Route::post('/cliend/store', [CliendController::class, 'cliend_store'])->name('c
 Route::post('/editcliend/{id}', [CliendController::class, 'editcliend'])->name('editcliend');
 Route::post('/cliend/update', [CliendController::class, 'cliend_update'])->name('cliend.update');
 Route::get('/cliend/delete/{id}', [CliendController::class, 'cliend_delete'])->name('cliend.delete');
+
+// Skille
+Route::get('/skille/list', [skilleController::class, 'skille_list'])->name('skille.list');
+Route::post('/skille/store', [skilleController::class, 'skille_store'])->name('skille.store');
+Route::post('/editskille/{id}', [skilleController::class, 'editskille'])->name('editskille');
+Route::post('/skille/update', [skilleController::class, 'skille_update'])->name('skille.update');
+Route::get('/skille/delete/{id}', [skilleController::class, 'skille_delete'])->name('skille.delete');
+
+// socialmedia
+Route::get('/socialmedia/list', [socialMediaController::class, 'socialmedia_list'])->name('socialmedia.list');
+Route::post('/socialmedia/store', [socialMediaController::class, 'socialmedia_store'])->name('socialmedia.store');
+Route::post('/editsocialmedia/{id}', [socialMediaController::class, 'editsocialmedia'])->name('editsocialmedia');
+Route::post('/socialmedia/update', [socialMediaController::class, 'socialmedia_update'])->name('socialmedia.update');
+Route::get('/socialmedia/delete/{id}', [socialMediaController::class, 'socialmedia_delete'])->name('socialmedia.delete');
 
 
 // media

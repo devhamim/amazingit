@@ -25,6 +25,7 @@
                                     <th>SL</th>
                                     <th>Category image</th>
                                     <th>Category name</th>
+                                    <th>Category Color</th>
                                     <th>Status</th>
                                     <th>Options</th>
                                 </tr>
@@ -37,6 +38,7 @@
                                             <img src="{{asset('uploads/category')}}/{{$category->category_image}}" alt class="img-fluid wid-40">
                                         </td>
                                         <td>{{$category->category_name}}</td>
+                                        <td>{{$category->color}}</td>
                                         <td>
                                             @if ($category->status == 1)
                                                 <span class="badge badge-success">Active</span>

@@ -19,6 +19,14 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="form-group">
+                            <label class="form-label">Color</label>
+                            <input type="text" name="color" class="form-control" placeholder="Color">
+                            @error('color')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group">
                             <label class="form-label">Category Description</label>
                             <input type="text" name="category_desp" class="form-control" placeholder="Description" required>
                             @error('category_desp')

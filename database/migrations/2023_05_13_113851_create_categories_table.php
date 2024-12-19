@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('category_name')->unique();
             $table->longText('category_desp')->unique();
+            $table->string('color')->nullable();
             $table->string('category_image')->nullable();
             $table->string('slug');
             $table->integer('added_by');
