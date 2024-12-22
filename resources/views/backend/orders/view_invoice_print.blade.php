@@ -136,11 +136,11 @@
                         class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-print"></i> Print &
                         Download</a> </div>
             </footer>
-            <section class="sub_company">
+            {{-- <section class="sub_company">
                 <div class="footer_img">
                     <img src="{{asset('invoice/img/111.png')}}" alt="">
                 </div>
-            </section>
+            </section> --}}
         </div>
     </div>
 
