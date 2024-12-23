@@ -4291,7 +4291,7 @@ Location:
   text-align: center;
   background: #DDD2F3;
   position: relative;
-  padding: 50px 20px;
+  padding: 30px 20px;
   border-radius: 8px;
   max-height: 440px;
   margin-bottom: 30px;
@@ -21281,16 +21281,14 @@ Location:
 }
 
 .header-search-form-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 400px;
-  z-index: 9999;
-  background-color: #fff;
-  transform: translate3d(0, -100%, 0);
-  transition: transform 0.85s cubic-bezier(0.175, 1, 0.275, 1), visibility 0.8s step-end;
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    width: 60%;
+    z-index: 9999;
+    background-color: #fff;
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.85s cubic-bezier(0.175, 1, 0.275, 1), visibility 0.8s step-end;
 }
 
 .header-search-form-wrapper.open {

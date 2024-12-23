@@ -101,10 +101,11 @@ class FrontendController extends Controller
 
     // our_services
     function our_services() {
-        $services = Category::where('status', '1')->get();
+        $categorys = Category::where('status', '1')->get();
+        $services = Product::where('status', '1')->get();
         $skilles= skille::where('status', 1)->get();
         $metaSettings = Meta::where('pages', 'services')->where('status', 1)->first();
-        return view('frontend.service.index', compact(['services', 'metaSettings', 'skilles']));
+        return view('frontend.service.index', compact(['services','categorys', 'metaSettings', 'skilles']));
     }
 
     // services_product

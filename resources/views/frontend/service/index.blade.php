@@ -1,7 +1,7 @@
 @extends('frontend.master.master')
-@section('title', $metaSettings->title ?? 'Nugortech IT - Services')
+@section('title', $metaSettings->title ?? 'Services')
 @section('meta_description', $metaSettings->meta_description ?? 'Services' )
-@section('meta_title', $metaSettings->meta_title ?? 'Nugortech IT - Services' )
+@section('meta_title', $metaSettings->meta_title ?? 'Services' )
 @section('meta_tag', $metaSettings->meta_tag ?? ' Services' )
 @section('content')
 
@@ -23,21 +23,78 @@
 <!--===== HERO AREA ENDS =======-->
 
 <!--===== SERVICE AREA STARTS =======-->
-<div class="service1-section-area sp2">
+<div class="case-inner-section-area sp1">
     <div class="container">
         <div class="row">
-            
+            <div class="col-lg-7 m-auto">
+                <div class="tabs-area text-center">
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="pills-all-tab" data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab" aria-controls="pills-all" aria-selected="true">All</button>
+                        </li>
+                        @php
+                            $uniqueTypes = $categorys->unique('category_name');
+                        @endphp
+                        @foreach ($uniqueTypes as $category)
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-{{ str_replace(' ', '', $category->category_name) }}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{ str_replace(' ', '', $category->category_name) }}" type="button" role="tab" aria-controls="pills-{{ str_replace(' ', '', $category->category_name) }}" aria-selected="false">{{ $category->category_name }}</button>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
             <div class="col-lg-12">
-                <div class="service-all-boxes-area1">
-                    <div class="row">
-                        @foreach ($services as $service)
-                            <div class="col-lg-3 col-md-6" >
-                                <div class="service-boxarea" style="background: {{ $service->color }}">
-                                    <a href="#">{{$service->category_name}}</a>
-                                    <div class="space40"></div>
-                                    <img src="{{asset('uploads/category')}}/{{$service->category_image}}" alt="">
-                                    <div class="space40"></div>
-                                    <p>{{$service->category_desp}}</p>
+                <div class="tabs-content-area">
+                    <div class="tab-content row" id="pills-tabContent">
+                        <div class="tab-pane col-lg-12 fade active show" id="pills-all" role="tabpanel" aria-labelledby="pills-all-tab">
+                            <div class="row">
+                                @foreach ($services as $service)
+                                    <div class="col-lg-4">
+                                        <div class="tabs-contents">
+                                            <div class="align-items-center">
+                                                <div class="case-inner-box">
+                                                    {{-- <div class="img1 image-anime"> --}}
+                                                        <a href="{{ route('services.product.details',$service->slug) }}">
+                                                            <img src="{{asset('uploads/products/preview')}}/{{$service->preview_image}}" alt="">
+                                                        </a>
+                                                    {{-- </div> --}}
+                                                    <div class="content-area">
+                                                        <div class="link-area">
+                                                            <a href="{{ route('services.product.details',$service->slug) }}" class="head">{{ $service->product_name }}</a>
+                                                            <p>{{ $service->rel_to_category->category_name }}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        @foreach ($uniqueTypes as $category)
+                            <div class="tab-pane col-lg-12 fade" id="pills-{{ str_replace(' ', '', $category->category_name) }}" role="tabpanel" aria-labelledby="pills-{{ str_replace(' ', '', $category->category_name) }}-tab">
+                                <div class="row">
+                                    @foreach ($services->where('rel_to_category.category_name', $category->category_name) as $service)
+                                        <div class="col-lg-4">
+                                            <div class="tabs-contents">
+                                                <div class="align-items-center">
+                                                    <div class="case-inner-box">
+                                                        {{-- <div class="img1 image-anime"> --}}
+                                                            <a href="{{ route('services.product.details',$service->slug) }}">
+                                                                <img src="{{asset('uploads/products/preview')}}/{{$service->preview_image}}" alt="">
+                                                            </a>
+                                                        {{-- </div> --}}
+                                                        <div class="content-area">
+                                                            <div class="link-area">
+                                                                <a href="{{ route('services.product.details',$service->slug) }}" class="head">{{ $service->product_name }}</a>
+                                                                <p>{{ $service->rel_to_category->category_name }}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         @endforeach
