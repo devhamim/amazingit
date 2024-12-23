@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\protfolio;
 use App\Models\protfoliogallery;
 use Carbon\Carbon;
@@ -20,7 +21,10 @@ class ProtfolioController extends Controller
 
     //portfolio_add
     function portfolio_add(){
-        return view('backend.protfolio.add');
+        $categorys = Category::where('status', 1)->get();
+        return view('backend.protfolio.add',[
+            'categorys'=>$categorys,
+        ]);
     }
 
     // portfolio_store
@@ -90,10 +94,12 @@ class ProtfolioController extends Controller
     // portfolio_edit
     function portfolio_edit($id){
         $protfolios = protfolio::find($id);
+        $categorys = Category::where('status', 1)->get();
         $protfolio_gallerys = protfoliogallery::where('protfolio_id', $id)->get();
         return view('backend.protfolio.edit',[
             'protfolios'=>$protfolios,
             'protfolio_gallerys'=>$protfolio_gallerys,
+            'categorys'=>$categorys,
         ]);
     }
 
@@ -109,7 +115,7 @@ class ProtfolioController extends Controller
             'description' => 'nullable',
             'status' => 'required',
         ];
-    
+
         $validatedData = $request->validate($rules);
         if ($request->hasFile('preview_image')) {
             $img_del = protfolio::where('id', $request->protfolio_id)->first()->preview_image;

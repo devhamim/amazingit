@@ -88,6 +88,7 @@ class FrontendController extends Controller
         $category= Category::where('status', 1)->take(8)->get();
         $testmonials= testmonial::where('status', 1)->get();
         $skilles= skille::where('status', 1)->get();
+        $cliends = cliend::where('status', 1)->get();
         $metaSettings = Meta::where('pages', 'about')->where('status', 1)->first();
         return view('frontend.about.about', [
             'teams'=>$teams,
@@ -95,6 +96,7 @@ class FrontendController extends Controller
             'testmonials' => $testmonials,
             'metaSettings' => $metaSettings,
             'skilles' => $skilles,
+            'cliends' => $cliends,
         ]);
     }
 

@@ -23,7 +23,11 @@
                             <div class="col-lg-6 col-lg-6">
                                 <div class="form-group">
                                     <label class="form-label">Project Type *</label>
-                                    <input type="text" name="project_type" class="form-control" placeholder="Project Type" value="{{ old('project_type') }}" required>
+                                    <select name="project_type" id="project_type" class="form-control" required>
+                                        @foreach($categorys as $category)
+                                            <option value="{{ $category->category_name }}">{{ $category->category_name }}</option>
+                                        @endforeach
+                                    </select>
                                     @error('project_type')
                                         <span class="text-danger">{{$message}}</span>
                                     @enderror
