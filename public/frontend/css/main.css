@@ -21282,16 +21282,15 @@ Location:
 
 .header-search-form-wrapper {
     position: fixed;
-    top: 10%;
+    top: 0%;
     left: 20%;
     width: 60%;
-
+    z-index: 9999;
     transform: translate3d(0, -100%, 0);
     transition: transform 0.85s cubic-bezier(0.175, 1, 0.275, 1), visibility 0.8s step-end;
 }
 
 .header-search-form-wrapper.open {
-    z-index: 9999;
     background-color: #fff;
   transition: transform 0.85s cubic-bezier(0.175, 1, 0.275, 1), visibility 0.8s step-start;
   transform: translate3d(0, 0, 0);

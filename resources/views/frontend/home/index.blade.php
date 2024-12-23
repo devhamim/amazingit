@@ -11,9 +11,9 @@
       <div class="row align-items-center">
         <div class="col-lg-6">
           <div class="header-main-content heading1">
-            <h5><img width="18px" src="{{asset('frontend')}}/img/icons/logo-icons.png" alt="">Top #1 Software Company</h5>
-            <h1 class="text-anime-style-3">Elevate Your Brand With Expert programmer and software engineer</h1>
-            <p data-aos="fade-left" data-aos-duration="1000">Welcome to Amaizing IT where we specialize in revolutionizing your online <br class="d-lg-block d-none"> presence through expert programmer and software engineer. </p>
+            <h5><img width="18px" src="{{asset('frontend')}}/img/icons/logo-icons.png" alt="">Welcome</h5>
+            <h1 class="text-anime-style-3">{{ $banners->first()->banner_title }}</h1>
+            <p data-aos="fade-left" data-aos-duration="1000">{{ $banners->first()->banner_desp }}</p>
             <div class="btn-area" data-aos="fade-left" data-aos-duration="1200">
               <a href="{{ route('our.services') }}" class="header-btn1">Our Service<span><i class="fa-solid fa-arrow-right"></i></span></a>
               <a href="{{ route('contact') }}" class="header-btn2">Contact Now <span><i class="fa-solid fa-arrow-right"></i></span></a>
@@ -24,7 +24,7 @@
           <div class="header-images-area">
             <div class="main-images-area">
               <div class="img1">
-                <img src="{{asset('frontend')}}/img/all-images/header-img1.png" alt="" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="{{ asset('uploads/banner') }}/{{ $banners->first()->banner_image }}" alt="" data-aos="zoom-in" data-aos-duration="1000">
               </div>
               <div class="img2">
                 <img src="{{asset('frontend')}}/img/bg/header-imgbg.png" alt="">
@@ -60,21 +60,12 @@
         </div>
         <div class="col-lg-10">
           <div class="slider-images-area owl-carousel">
-            <div class="img1">
-              <img src="{{asset('frontend')}}/img/elements/brand-img1.png" alt="">
-            </div>
-            <div class="img1">
-              <img src="{{asset('frontend')}}/img/elements/brand-img2.png" alt="">
-            </div>
-            <div class="img1">
-              <img src="{{asset('frontend')}}/img/elements/brand-img3.png" alt="">
-            </div>
-            <div class="img1">
-              <img src="{{asset('frontend')}}/img/elements/brand-img4.png" alt="">
-            </div>
-            <div class="img1">
-              <img src="{{asset('frontend')}}/img/elements/brand-img5.png" alt="">
-            </div>
+            @foreach($cliends as $cliend)
+                <div class="img1">
+                    <img src="{{ asset('uploads/cliend') }}/{{ $cliend->image }}" alt="">
+                </div>
+            @endforeach
+
           </div>
         </div>
       </div>

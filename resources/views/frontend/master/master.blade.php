@@ -98,7 +98,7 @@
                 <a href="#" class="header-btn1 header-search-btn">Free Consultation <span><i class="fa-solid fa-arrow-right"></i></span></a>
               </div>
 
-              <div class="header-search-form-wrapper">
+            {{-- <div class="header-search-form-wrapper">
                 <div class="tx-search-close tx-close"><i class="fa-solid fa-xmark"></i></div>
                 <div class="header-search-container">
                     <div class="search-inner" style="top: 10%;">
@@ -168,7 +168,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="body-overlay"></div>
             </div>
           </div>
@@ -207,14 +207,22 @@
     <ul class="mobile-nav-list nav-list1">
       <li><a href="{{ url('/') }}">Home</a></li>
       <li><a href="{{ route('about') }}">About</a></li>
-      <li><a href="{{ route('our.services') }}">Services</a></li>
+      <li class="has-sub hash-has-sub"><span class="submenu-button"><em></em></span><a href="{{ route('our.services') }}" class="hash-nav">Services</a>
+        <ul class="sub-menu" style="display: none;">
+            @foreach ($categorys->take(4) as $category)
+                <li>
+                    <a href="{{ route('services.product',$category->slug) }}">{{ $category->category_name }}</a>
+                </li>
+            @endforeach
+        </ul>
+      </li>
       <li><a href="{{ route('our.protfolio') }}">Protfolio</a></li>
       <li><a href="{{ route('our.blogs') }}">Our Blog</a></li>
       <li><a href="{{ route('contact') }}">Contact Us</a></li>
     </ul>
 
     <div class="allmobilesection">
-      <a href="{{ route('contact') }}"  class="header-btn1">Get Started <span><i class="fa-solid fa-arrow-right"></i></span></a>
+      <a href="#"  class="header-btn1 header-search-btn">Get Started <span><i class="fa-solid fa-arrow-right"></i></span></a>
       <div class="single-footer">
         <h3>Contact Info</h3>
         <div class="footer1-contact-info">
@@ -267,7 +275,77 @@
   </div>
 </div>
 <!--===== MOBILE HEADER STARTS =======-->
+<div class="header-search-form-wrapper">
+    <div class="tx-search-close tx-close"><i class="fa-solid fa-xmark"></i></div>
+    <div class="header-search-container">
+        <div class="search-inner" style="top: 10%;">
+            <div class="row">
+                <div class="col-xl-7 col-lg-6 text-center m-auto">
+                    <div class="sec-title ">
+                        <h2 class="py-3">Feel free to write</h2>
+                    </div>
+                    <a href="https://wa.me/+88{{ $setting->first()->phone }}?text=Hello%20anyone%20available" target="_blank" class="btn btn-success">Whatsapp<span></span></a>
 
+                    <form id="contact_form" name="contact_form" class action="{{route('consultancy.store')}}" class="contact-form mb-3" method="POST">
+                        @csrf
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="my-3">
+                                    <input name="name" class="form-control" type="text" value="{{ old('name') }}" placeholder="Enter Name" required>
+                                    @error('name')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="mb-3">
+                                    <input name="email" class="form-control" type="email" placeholder="Enter Email" value="{{ old('name') }}">
+                                    @error('email')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="mb-3">
+                                    <input name="phone" class="form-control" type="number" placeholder="Enter Phone" >
+                                    @error('phone')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="mb-3">
+                                    <select  name="service" class="form-control" required>
+                                        @foreach ($categorys as $category)
+                                            <option value="{{ $category->category_name }}"><strong>{{ $category->category_name }}</strong></option>
+                                        @endforeach
+                                    </select>
+                                    @error('service')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my-3">
+                            <textarea name="message" class="form-control " rows="7"  placeholder="Enter Message"></textarea>
+                            @error('message')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="mb-5">
+                            <input name="form_botcheck" class="form-control" type="hidden" value />
+                            <button type="submit" class="btn btn-primary"
+                                data-loading-text="Please wait..."><span class="btn-title">Submit</span></button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {{-- main start --}}
 @yield('content')
 {{-- main end --}}
